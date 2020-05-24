@@ -5,7 +5,7 @@ namespace Bhavingajjar\LaravelPython;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Bhavingajjar\LaravelPython\Skeleton\SkeletonClass
+ * @see \Bhavingajjar\LaravelPython\LaravelPythonFacade
  */
 class LaravelPythonFacade extends Facade
 {
