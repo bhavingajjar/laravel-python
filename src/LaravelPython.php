@@ -36,14 +36,14 @@ class LaravelPython
 
     public function run($scriptName)
     {
-        if (!file_exists($this->pythonResourcesPath . '/' . $scriptName)) {
+        if (! file_exists($this->pythonResourcesPath.'/'.$scriptName)) {
             return 'Python script not found';
         }
-        $process = Process::fromShellCommandline($this->pythonPath . ' ' . $this->pythonResourcesPath . '/' . $scriptName);
+        $process = Process::fromShellCommandline($this->pythonPath.' '.$this->pythonResourcesPath.'/'.$scriptName);
         $process->run();
         $process->wait();
         // executes after the command finishes
-        if (!$process->isSuccessful()) {
+        if (! $process->isSuccessful()) {
             throw new ProcessFailedException($process);
         }
 

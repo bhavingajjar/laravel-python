@@ -13,7 +13,7 @@ return [
     | Example: 'C:\Python27\python.exe' or '/usr/bin/python' etc...
     |
     */
-    'python_path' => env('PYTHON_PATH', NULL),
+    'python_path' => env('PYTHON_PATH', null),
 
     /*
     |--------------------------------------------------------------------------
