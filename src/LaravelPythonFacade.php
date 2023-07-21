@@ -1,20 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bhavingajjar\LaravelPython;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Bhavingajjar\LaravelPython\LaravelPythonFacade
+ * @see \BhavinGajjar\LaravelPython\LaravelPythonFacade
  */
 class LaravelPythonFacade extends Facade
 {
     /**
      * Get the registered name of the component.
-     *
-     * @return string
      */
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
         return 'laravel-python';
     }
