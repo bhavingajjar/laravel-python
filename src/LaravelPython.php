@@ -52,7 +52,7 @@ class LaravelPython
     public function run(string $scriptName, array $params = []): mixed
     {
         if (self::checkPaths($scriptName)) {
-            $cmd = $this->getPythonPath() . ' ' . $this->getPythonResourcesPath() . '/' . $scriptName;
+            $cmd = $this->getPythonPath().' '.$this->getPythonResourcesPath().'/'.$scriptName;
             if (! empty($params)) {
                 $cmd .= ' '.implode(' ', $params);
             }
@@ -66,11 +66,12 @@ class LaravelPython
 
             return self::output(trim($process->getOutput()));
         }
+
         return false;
     }
 
     /**
-     * @param $output
+     * @param  $output
      */
     private function output($output): mixed
     {
@@ -86,9 +87,10 @@ class LaravelPython
         if (empty($this->getPythonPath())) {
             return 'Python command not found';
         }
-        if (! file_exists($this->getPythonResourcesPath() . '/' . $scriptName)) {
+        if (! file_exists($this->getPythonResourcesPath().'/'.$scriptName)) {
             return 'Python script not found';
         }
+
         return true;
     }
 
@@ -105,11 +107,11 @@ class LaravelPython
     {
         $autoPath = [];
         if (PHP_OS === 'WINNT') {
-            exec('where python' . config('laravel-python.python_version'), $autoPath);
+            exec('where python'.config('laravel-python.python_version'), $autoPath);
         } elseif (PHP_OS === 'Linux') {
-            exec('which python' . config('laravel-python.python_version'), $autoPath);
+            exec('which python'.config('laravel-python.python_version'), $autoPath);
         } else {
-            $this->setPythonPath('python' . config('laravel-python.python_version'));
+            $this->setPythonPath('python'.config('laravel-python.python_version'));
         }
 
         if (is_array($autoPath) && isset($autoPath[0])) {
