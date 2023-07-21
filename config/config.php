@@ -32,13 +32,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Python Resource Path
+    | Python Version
     |--------------------------------------------------------------------------
     |
-    | Set this value to the path of your system install python
-    | this is by default "{project}/resources/python"
-    | Set this path like
-    | Example: '{project}/public/python' or '{project}/storage/python' etc...
+    | Set this value to the latest version of python which installed in your system
+    | this is by default "python3"
+    | Set this version like give int
+    | Example: '' or '2' etc...
     |
     */
     'python_version' => env('PYTHON_VERSION', 3),
